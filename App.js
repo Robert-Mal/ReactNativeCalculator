@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { Dimensions } from 'react-native';
 
+import SplashScreen from 'react-native-splash-screen';
+
 import PortraitView from './components/PortraitView';
 import LandscapeView from './components/LandscapeView';
 
@@ -34,6 +36,10 @@ const App = () => {
     let changed = isPortrait() ? 'portrait' : 'landscape';
     setOrientation(changed);
   }, [])
+   
+  useEffect(() => {
+    SplashScreen.hide();
+  }, []);
 
   const portraitButtons = [
     {
